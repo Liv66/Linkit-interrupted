@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_view"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.linkit.homefragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_linkListFragment"
+            app:destination="@id/linkListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkListFragment"
+        android:name="com.example.linkit.linklistfrgament.LinkListFragment"
+        android:label="fragment_link_list"
+        tools:layout="@layout/fragment_link_list">
+        <argument
+            android:name="folder"
+            app:argType="com.example.linkit.database.Folder"
+            app:nullable="true" />
+        <argument
+            android:name="query"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_linkListFragment_to_linkFragment"
+            app:destination="@id/linkFragment" />
+        <action
+            android:id="@+id/action_linkListFragment_self"
+            app:destination="@id/linkListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.linkit.accountfragment.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.linkit.loginfragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkFragment"
+        android:name="com.example.linkit.link.LinkFragment"
+        android:label="fragment_link"
+        tools:layout="@layout/fragment_link">
+        <argument
+            android:name="linkKey"
+            app:argType="com.example.linkit.database.Link" />
+    </fragment>
+</navigation>

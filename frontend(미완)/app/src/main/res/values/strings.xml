@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Linkit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="linkit">Linkit</string>
+    <string name="login_skip"><u><![CDATA[로그인 건너뛰기 >]]></u></string>
+
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="mobno">Mobile No.</string>
+    <string name="reg_no">Reg</string>
+</resources>
